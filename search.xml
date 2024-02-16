@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>工作使用网站</title>
+      <link href="/2024/02/16/%E5%B7%A5%E4%BD%9C%E4%BD%BF%E7%94%A8%E7%BD%91%E7%AB%99/"/>
+      <url>/2024/02/16/%E5%B7%A5%E4%BD%9C%E4%BD%BF%E7%94%A8%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<h2 id="打印机"><a href="#打印机" class="headerlink" title="打印机"></a>打印机</h2><p><a href="https://www.drvsky.com/">驱动天堂</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 打印机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>打印机基本原理</title>
+      <link href="/2024/02/16/%E6%89%93%E5%8D%B0%E6%9C%BA%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/"/>
+      <url>/2024/02/16/%E6%89%93%E5%8D%B0%E6%9C%BA%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="激光打印机"><a href="#激光打印机" class="headerlink" title="激光打印机"></a>激光打印机</h2><ul><li>激光打印机（就是要给他加粉的那个）</li></ul><p><img src="/images/posts/printer/%E6%84%9F%E5%85%89%E9%BC%93.png" alt="激光打印机"></p><h3 id="打印原理"><a href="#打印原理" class="headerlink" title="打印原理"></a>打印原理</h3><p>打印的七个阶段：充电，曝光，显影，转印，定影，清洁，消电</p><blockquote><p>显影辊：载体（带磁性，正电）和碳粉（负电）通过搅拌摩擦会由于静电吸附在一起，再吸附再显影辊表面，通过刮刀和振动均匀的分布在显影辊上面</p></blockquote><p><img src="/images/posts/printer/%E6%89%93%E5%8D%B0%E8%BF%87%E7%A8%8B%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%9B%BE.png" alt="打印过程基本原理图"></p><ol><li>充电：充电辊和感光鼓高速旋转，给感光鼓上电。</li><li>曝光：充电辊继续旋转，此时激光头（打印头）对感光鼓照射，被激光照射的电荷就没了，没照射的还在，这样就在感光鼓表面形成静电潜相。</li><li>显影：感光鼓继续旋转来到显影辊（磁辊位置），通过静电潜相，吸附显影辊上面东西。</li><li>转印：转印辊带正点，纸张通过时，会将感光鼓上的碳粉吸附到纸张上，形成图像（此时不牢固，一摸字就模糊了）。</li><li>定影：<code>黑色的压力管</code>和<code>棕色的加热管</code>，加热通过的纸张，融化碳粉颗粒，使得碳粉颗粒渗入纸张牢固图像。</li><li>清洁：感光鼓继续旋转，通过清洁刮刀，清洁残留碳粉，将残留保存在废粉盒。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 打印机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/11/22/hello-world/"/>
       <url>/2023/11/22/hello-world/</url>
