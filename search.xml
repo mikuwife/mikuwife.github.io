@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Windows</title>
+      <link href="/2024/02/18/Windows/"/>
+      <url>/2024/02/18/Windows/</url>
+      
+        <content type="html"><![CDATA[<h2 id="PowerShell无法识别命令"><a href="#PowerShell无法识别命令" class="headerlink" title="PowerShell无法识别命令"></a>PowerShell无法识别命令</h2><p>进入PowerShell管理员模式，粘贴下面代码，选择y即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>打印机维修日常</title>
       <link href="/2024/02/17/%E6%89%93%E5%8D%B0%E6%9C%BA%E7%BB%B4%E4%BF%AE%E6%97%A5%E5%B8%B8/"/>
       <url>/2024/02/17/%E6%89%93%E5%8D%B0%E6%9C%BA%E7%BB%B4%E4%BF%AE%E6%97%A5%E5%B8%B8/</url>
