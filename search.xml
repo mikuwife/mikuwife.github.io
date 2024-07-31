@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>2024任务汇总</title>
+      <link href="/2024/07/31/2024%E4%BB%BB%E5%8A%A1%E6%B1%87%E6%80%BB/"/>
+      <url>/2024/07/31/2024%E4%BB%BB%E5%8A%A1%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<ul><li>[√] 拿到驾照</li><li><input disabled="" type="checkbox"> 拿到电工证</li><li><input disabled="" type="checkbox"> 参加一次考研体验</li><li><input disabled="" type="checkbox"> 学习linux操作系统</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux命令</title>
+      <link href="/2024/07/31/linux%E5%91%BD%E4%BB%A4/"/>
+      <url>/2024/07/31/linux%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>ls 查看文件</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2024/07/29/hello-world/"/>
       <url>/2024/07/29/hello-world/</url>
