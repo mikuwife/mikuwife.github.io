@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>云专卖部署</title>
+      <link href="/2024/10/09/%E4%BA%91%E4%B8%93%E5%8D%96%E9%83%A8%E7%BD%B2/"/>
+      <url>/2024/10/09/%E4%BA%91%E4%B8%93%E5%8D%96%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://yun8609.com/">后台登录地址</a><br><a href="https://yun8609.com/pos/dcenter/show.do">软件下载地址</a></p><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96.png" alt="alt text"></p><h2 id="前台"><a href="#前台" class="headerlink" title="前台"></a>前台</h2><h3 id="前台配置"><a href="#前台配置" class="headerlink" title="前台配置"></a>前台配置</h3><h4 id="常规参数"><a href="#常规参数" class="headerlink" title="常规参数"></a>常规参数</h4><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96%E5%8F%82%E6%95%B01.png" alt="alt text"></p><h4 id="小票打印"><a href="#小票打印" class="headerlink" title="小票打印"></a>小票打印</h4><ul><li>打印机设置（通常 LPT1，LPT2）</li></ul><p><img src="/images/%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><ul><li>小票设置</li></ul><p><img src="/images/%E5%B0%8F%E7%A5%A8%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h4 id="通讯称"><a href="#通讯称" class="headerlink" title="通讯称"></a>通讯称</h4><p><img src="/images/%E9%80%9A%E8%AE%AF%E7%A7%B0.png" alt="alt text"></p><h4 id="钱箱外设"><a href="#钱箱外设" class="headerlink" title="钱箱外设"></a>钱箱外设</h4><p><img src="/images/%E9%92%B1%E7%AE%B1%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="报损"><a href="#报损" class="headerlink" title="报损"></a>报损</h4><p><img src="/images/%E6%8A%A5%E6%8D%9F.png" alt="alt text"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2024/10/09/hello-world/"/>
       <url>/2024/10/09/hello-world/</url>
