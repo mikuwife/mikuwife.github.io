@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>windows问题汇总</title>
+      <link href="/2024/10/10/windows%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+      <url>/2024/10/10/windows%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+      
+        <content type="html"><![CDATA[<h2 id="桌面图标变大变小"><a href="#桌面图标变大变小" class="headerlink" title="桌面图标变大变小"></a>桌面图标变大变小</h2><p>ctrl + 鼠标滚轮 &#x3D;&#x3D;&#x3D;&gt; 放大缩小</p><h2 id="Powershell-无法识别命令"><a href="#Powershell-无法识别命令" class="headerlink" title="Powershell 无法识别命令"></a>Powershell 无法识别命令</h2><p>以管理员身份运行 powershell，输入一下命令，选中 y，设置权限</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>云专卖部署</title>
       <link href="/2024/10/09/%E4%BA%91%E4%B8%93%E5%8D%96%E9%83%A8%E7%BD%B2/"/>
       <url>/2024/10/09/%E4%BA%91%E4%B8%93%E5%8D%96%E9%83%A8%E7%BD%B2/</url>
       
-        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://yun8609.com/">后台登录地址</a><br><a href="https://yun8609.com/pos/dcenter/show.do">软件下载地址</a></p><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96.png" alt="alt text"></p><h2 id="前台"><a href="#前台" class="headerlink" title="前台"></a>前台</h2><h3 id="前台配置"><a href="#前台配置" class="headerlink" title="前台配置"></a>前台配置</h3><h4 id="常规参数"><a href="#常规参数" class="headerlink" title="常规参数"></a>常规参数</h4><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96%E5%8F%82%E6%95%B01.png" alt="alt text"></p><h4 id="小票打印"><a href="#小票打印" class="headerlink" title="小票打印"></a>小票打印</h4><ul><li>打印机设置（通常 LPT1，LPT2）</li></ul><p><img src="/images/%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><ul><li>小票设置</li></ul><p><img src="/images/%E5%B0%8F%E7%A5%A8%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h4 id="通讯称"><a href="#通讯称" class="headerlink" title="通讯称"></a>通讯称</h4><p><img src="/images/%E9%80%9A%E8%AE%AF%E7%A7%B0.png" alt="alt text"></p><h4 id="钱箱外设"><a href="#钱箱外设" class="headerlink" title="钱箱外设"></a>钱箱外设</h4><p><img src="/images/%E9%92%B1%E7%AE%B1%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="报损"><a href="#报损" class="headerlink" title="报损"></a>报损</h4><p><img src="/images/%E6%8A%A5%E6%8D%9F.png" alt="alt text"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://yun8609.com/">后台登录地址</a><br><a href="https://yun8609.com/pos/dcenter/show.do">软件下载地址</a></p><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96.png" alt="alt text"></p><h2 id="前台"><a href="#前台" class="headerlink" title="前台"></a>前台</h2><h3 id="前台配置"><a href="#前台配置" class="headerlink" title="前台配置"></a>前台配置</h3><h4 id="常规参数"><a href="#常规参数" class="headerlink" title="常规参数"></a>常规参数</h4><p><img src="/images/%E4%BA%91%E4%B8%93%E5%8D%96%E5%8F%82%E6%95%B01.png" alt="alt text"></p><h4 id="小票打印"><a href="#小票打印" class="headerlink" title="小票打印"></a>小票打印</h4><ul><li>打印机设置（通常 LPT1，LPT2）</li></ul><p><img src="/images/%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><ul><li>小票设置</li></ul><p><img src="/images/%E5%B0%8F%E7%A5%A8%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h4 id="通讯称"><a href="#通讯称" class="headerlink" title="通讯称"></a>通讯称</h4><p><img src="/images/%E9%80%9A%E8%AE%AF%E7%A7%B0.png" alt="alt text"></p><h4 id="钱箱外设"><a href="#钱箱外设" class="headerlink" title="钱箱外设"></a>钱箱外设</h4><p><img src="/images/%E9%92%B1%E7%AE%B1%E8%AE%BE%E7%BD%AE.png" alt="alt text"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="报损"><a href="#报损" class="headerlink" title="报损"></a>报损</h4><p><img src="/images/%E6%8A%A5%E6%8D%9F.png" alt="alt text"></p><h2 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h2><h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><p>首先要对几个数据进行录入这是使用的开始:</p><ul><li><code>商品分类</code></li></ul><p><img src="/images/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB.png" alt="alt text"></p><ul><li><code>货商分类</code>&amp;<code>货商档案</code></li></ul><p><img src="/images/%E8%B4%A7%E5%95%86%E7%AE%A1%E7%90%86.png" alt="alt text"></p>]]></content>
       
       
       
