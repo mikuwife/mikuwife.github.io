@@ -1,0 +1,32 @@
+.pagination {
+  margin: 0.625em 0;
+  height: 3em;
+}
+.pagination ul {
+  height: 100%;
+  float: right;
+}
+.pagination li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+.pagination li a {
+  display: block;
+  width: 2.25em;
+  height: 2.25em;
+  line-height: 2.25em;
+  color: var(--text-color);
+  background-color: var(--code-light-color);
+  text-align: center;
+  border-radius: 3px;
+  margin: 0 0.25em;
+  user-select: none;
+}
+.pagination li a.current {
+  color: var(--title-text-color);
+}
+.pagination li a[href]:hover {
+  color: var(--hover-text-color);
+}

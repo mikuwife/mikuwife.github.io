@@ -1,0 +1,33 @@
+.sort-head {
+  width: 100%;
+  margin: 1.125em 0;
+}
+.sort-head h2 {
+  display: block;
+  color: var(--title-text-color);
+  user-select: none;
+}
+.sort-post {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr 10em;
+  margin: 0.5em 0;
+}
+.sort-post a {
+  display: block;
+  font-size: 1.25em;
+  padding: 0 0.25em;
+  user-select: none;
+}
+.sort-post a:not([href]) {
+  pointer-events: none;
+}
+.sort-post .sort-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-end;
+}
+.sort-post .sort-list .sort-item {
+  font-size: 0.875em;
+}
