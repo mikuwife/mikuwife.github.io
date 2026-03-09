@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+    <link rel="icon" href="/assets/favicon.png">
+  
+  
+  <title>数据的导入、清洗及简单操作列（第一周） | MikuCat&#39;s Blog</title>
+  <link rel="canonical" href="http://example.com/2026/03/09/python/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E3%80%81%E6%B8%85%E6%B4%97%E5%8F%8A%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%88%97%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/">
+  <meta name="author" content="mikucat" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="python, 数据分析" />
+  
+  <meta name="description" content="数据分析基本流程 读取数据：通常是xlsx和csv为后缀的表格文件 查看基本信息，对表格内容有个大致了解 数据清洗：去重 -&gt; 填补&#x2F;删除缺失值 -&gt; 修正格式（日期&#x2F;数字） 计算需要的数据，最后保存文件。  读取数据1234567891011121314151617181920212223import pandas as pd# 定义文件路径# Windows 用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据的导入、清洗及简单操作列（第一周）">
+<meta property="og:url" content="http://example.com/2026/03/09/python/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E3%80%81%E6%B8%85%E6%B4%97%E5%8F%8A%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%88%97%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/index.html">
+<meta property="og:site_name" content="MikuCat&#39;s Blog">
+<meta property="og:description" content="数据分析基本流程 读取数据：通常是xlsx和csv为后缀的表格文件 查看基本信息，对表格内容有个大致了解 数据清洗：去重 -&gt; 填补&#x2F;删除缺失值 -&gt; 修正格式（日期&#x2F;数字） 计算需要的数据，最后保存文件。  读取数据1234567891011121314151617181920212223import pandas as pd# 定义文件路径# Windows 用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-09T10:39:57.000Z">
+<meta property="article:modified_time" content="2026-03-09T11:25:57.331Z">
+<meta property="article:author" content="mikucat">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="数据分析">
+<meta name="twitter:card" content="summary">
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
+  
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
+  
+  
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  
+  <!-- 自定义站点横幅和背景 -->
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+      }
+    
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
+  </style>
+
+  <!-- 额外的追加注入项 -->
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    <li>
+                                        
+                                            <a href="/">
+                                        
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/link/">
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            链接
+                                        </a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">MikuCat&#39;s Blog</a></div>
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>MikuCat&#39;s Blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/09/python/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E3%80%81%E6%B8%85%E6%B4%97%E5%8F%8A%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%88%97%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+                <h1 class="kratos-page-title text-center" itemprop="name headline">数据的导入、清洗及简单操作列（第一周）</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2026-03-09T10:39:57.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2026-03-09</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">mikucat</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~4.38K
+                        
+                        字
+                    </li>
+                
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">数据分析基本流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">1.1.</span> <span class="toc-text">读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.2.</span> <span class="toc-text">查看基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-number">1.3.</span> <span class="toc-text">数据清洗</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%BB%E9%87%8D"><span class="toc-number">1.3.1.</span> <span class="toc-text">去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-number">1.3.2.</span> <span class="toc-text">处理缺失值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">数据类型转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%92%8C%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6"><span class="toc-number">1.4.</span> <span class="toc-text">计算和保存文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%88%97%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">操作列数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E5%8F%96%E9%9C%80%E8%A6%81%E7%9A%84%E5%88%97"><span class="toc-number">2.1.</span> <span class="toc-text">选取需要的列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E5%88%97"><span class="toc-number">2.2.</span> <span class="toc-text">新增列</span></a></li></ol></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><h2 id="数据分析基本流程"><a href="#数据分析基本流程" class="headerlink" title="数据分析基本流程"></a>数据分析基本流程</h2><ol>
+<li>读取数据：通常是xlsx和csv为后缀的表格文件</li>
+<li>查看基本信息，对表格内容有个大致了解</li>
+<li>数据清洗：去重 -&gt; 填补&#x2F;删除缺失值 -&gt; 修正格式（日期&#x2F;数字）</li>
+<li>计算需要的数据，最后保存文件。</li>
+</ol>
+<h3 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义文件路径</span></span><br><span class="line"><span class="comment"># Windows 用户注意：路径中的斜杠要用双反斜杠 \\ 或者原始字符串 r&quot;&quot;</span></span><br><span class="line"><span class="comment"># 例如：file_path = r&quot;C:\Users\你的名字\Desktop\dirty_data.xlsx&quot;</span></span><br><span class="line"><span class="comment"># Mac/Linux 用户：file_path = &quot;/Users/你的名字/Desktop/dirty_data.xlsx&quot;</span></span><br><span class="line"></span><br><span class="line">file_path = <span class="string">&#x27;dirty_data.xlsx&#x27;</span>  <span class="comment"># 如果文件和 notebook 在同一文件夹，直接写文件名即可</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 读取 Excel</span></span><br><span class="line">    df = pd.read_excel(file_path) </span><br><span class="line">    <span class="comment"># df = pd.read_csv(file_path) </span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;✅ 数据读取成功！&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;数据形状：<span class="subst">&#123;df.shape&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n=== 前 5 行预览 ===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df.head())</span><br><span class="line">    </span><br><span class="line"><span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;❌ 错误：找不到文件！请检查文件路径是否正确，或者文件是否在当前目录下。&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;❌ 发生其他错误：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看基本信息"><a href="#查看基本信息" class="headerlink" title="查看基本信息"></a>查看基本信息</h3><div class="alert alert-info">
+  <div class="icon"><i class="fa fa-info"></i></div>
+  <div class="text">
+  <ul>
+<li>拿到任何新数据，第一件事就是运行 df.head() 和 df.info()。</li>
+<li>如果 info() 显示某列的非空值 (Non-Null Count) 少于总行数，说明有缺失值。</li>
+<li>如果日期列的类型是 object (字符串) 而不是 datetime，后续时间分析会报错，需要转换。</li>
+</ul>
+
+  </div>
+  </div>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看前 N 行 (默认前 5 行) - 最常用！</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;=== 前 5 行 (head) ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.head())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 查看后 N 行 (默认后 5 行) - 检查数据尾部是否有异常</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 后 3 行 (tail) ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.tail(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 查看数据结构和非空值数量 - 极其重要！</span></span><br><span class="line"><span class="comment"># 它会告诉你：有多少行？每列是什么类型？有没有缺失值？</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 数据信息 (info) ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.info())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 查看数值列的统计摘要 (平均值、最大最小值等)</span></span><br><span class="line"><span class="comment"># 快速了解“单价”和“销量”的分布情况</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 统计描述 (describe) ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.describe())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 查看列名</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 列名 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.columns)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 查看形状 (行数, 列数)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n=== 数据形状 ===: <span class="subst">&#123;df.shape&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h3><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查是否有重复行</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;重复行数：<span class="subst">&#123;df.duplicated().<span class="built_in">sum</span>()&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除完全重复的行 (保留第一次出现的)</span></span><br><span class="line">df = df.drop_duplicates()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;✅ 已删除重复行。&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;当前形状：<span class="subst">&#123;df.shape&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="处理缺失值"><a href="#处理缺失值" class="headerlink" title="处理缺失值"></a>处理缺失值</h4><p>我们有三种策略：删除、填充、忽略。<br>策略 A：关键信息缺失（如“单价”为空），无法计算销售额，直接删除该行。<br>策略 B：非关键信息缺失（如“省份”为空），可以填充为“未知”。<br>策略 C：数值缺失（如“销量”），可以填充为 0 或平均值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看每列有多少缺失值</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 缺失值统计 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作 1: 删除“单价”为空的行 (因为没法算钱)</span></span><br><span class="line"><span class="comment"># subset 指定只检查哪一列</span></span><br><span class="line">df = df.dropna(subset=[<span class="string">&#x27;单价&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;✅ 已删除单价缺失的行。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作 2: 将“销量”的缺失值填充为 0 (假设没填就是没卖出去)</span></span><br><span class="line">df[<span class="string">&#x27;销量&#x27;</span>] = df[<span class="string">&#x27;销量&#x27;</span>].fillna(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 确保销量是整数类型 (可选，为了好看)</span></span><br><span class="line">df[<span class="string">&#x27;销量&#x27;</span>] = df[<span class="string">&#x27;销量&#x27;</span>].astype(<span class="built_in">int</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作 3: 将“省份”的缺失值填充为 &quot;未知&quot;</span></span><br><span class="line">df[<span class="string">&#x27;省份&#x27;</span>] = df[<span class="string">&#x27;省份&#x27;</span>].fillna(<span class="string">&#x27;未知&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 清洗后的数据预览 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 再次检查缺失值 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>()) <span class="comment"># 应该全是 0 了</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4><p>有时候日期会被读成字符串，需要转成真正的日期格式，方便后续按“月”或“年”分析。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 &#x27;日期&#x27; 列转换为 datetime 类型</span></span><br><span class="line">df[<span class="string">&#x27;日期&#x27;</span>] = pd.to_datetime(df[<span class="string">&#x27;日期&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n日期列类型：<span class="subst">&#123;df[<span class="string">&#x27;日期&#x27;</span>].dtype&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 现在可以提取年份、月份了</span></span><br><span class="line">df[<span class="string">&#x27;年份&#x27;</span>] = df[<span class="string">&#x27;日期&#x27;</span>].dt.year</span><br><span class="line">df[<span class="string">&#x27;月份&#x27;</span>] = df[<span class="string">&#x27;日期&#x27;</span>].dt.month</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 提取年月后的数据 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df[[<span class="string">&#x27;日期&#x27;</span>, <span class="string">&#x27;年份&#x27;</span>, <span class="string">&#x27;月份&#x27;</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算和保存文件"><a href="#计算和保存文件" class="headerlink" title="计算和保存文件"></a>计算和保存文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 计算销售额</span></span><br><span class="line">df[<span class="string">&#x27;销售额&#x27;</span>] = df[<span class="string">&#x27;单价&#x27;</span>] * df[<span class="string">&#x27;销量&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 保存为新的 Excel 文件</span></span><br><span class="line"><span class="comment"># index=False 表示不保存最左边的索引列 (0, 1, 2...)</span></span><br><span class="line">output_path = <span class="string">&#x27;cleaned_sales_data.xlsx&#x27;</span></span><br><span class="line">df.to_excel(output_path, index=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;✅ 数据处理完成！结果已保存至：<span class="subst">&#123;output_path&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;请去你的文件夹里打开这个 Excel 看看效果吧！&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="操作列数据"><a href="#操作列数据" class="headerlink" title="操作列数据"></a>操作列数据</h2><h3 id="选取需要的列"><a href="#选取需要的列" class="headerlink" title="选取需要的列"></a>选取需要的列</h3><ol>
+<li>选取单列 (得到 Series)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选取“商品”这一列</span></span><br><span class="line">products = df[<span class="string">&#x27;商品&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;=== 商品列 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(products)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;类型：<span class="subst">&#123;<span class="built_in">type</span>(products)&#125;</span>&quot;</span>) <span class="comment"># 这是一个 Series (一维数组)</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>选取多列 (得到新的 DataFrame)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选取“商品”和“销售额”两列 (注意要用两层中括号 [[]])</span></span><br><span class="line">subset = df[[<span class="string">&#x27;商品&#x27;</span>, <span class="string">&#x27;单价&#x27;</span>, <span class="string">&#x27;销量&#x27;</span>]]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 精选子表 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(subset)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>条件筛选</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 场景 A: 只看“广东”省的订单</span></span><br><span class="line">gd_orders = df[df[<span class="string">&#x27;省份&#x27;</span>] == <span class="string">&#x27;广东&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 广东省订单 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gd_orders)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 场景 B: 只看“单价”大于 100 的商品</span></span><br><span class="line">high_price_items = df[df[<span class="string">&#x27;单价&#x27;</span>] &gt; <span class="number">100</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 高价商品 (&gt;100元) ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(high_price_items)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 场景 C: 组合条件 (且 &amp; | 或)</span></span><br><span class="line"><span class="comment"># 找出：是“数码”类目 且 “销量”大于 10 的订单</span></span><br><span class="line"><span class="comment"># 注意：每个条件都要用括号括起来！</span></span><br><span class="line">complex_filter = df[(df[<span class="string">&#x27;类目&#x27;</span>] == <span class="string">&#x27;数码&#x27;</span>) &amp; (df[<span class="string">&#x27;销量&#x27;</span>] &gt; <span class="number">10</span>)]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 数码类且销量&gt;10的订单 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(complex_filter)</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增列"><a href="#新增列" class="headerlink" title="新增列"></a>新增列</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接计算：新增一列“销售额”</span></span><br><span class="line">df[<span class="string">&#x27;销售额&#x27;</span>] = df[<span class="string">&#x27;单价&#x27;</span>] * df[<span class="string">&#x27;销量&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n=== 新增销售额列后的表格 ===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算总销售额</span></span><br><span class="line">total_sales = df[<span class="string">&#x27;销售额&#x27;</span>].<span class="built_in">sum</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n总销售额：<span class="subst">&#123;total_sales&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag">数据分析</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2026-03-09T11:25:57.331Z" itemprop="dateModified">最后编辑：2026-03-09</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" python基础语法" href="/2026/03/09/python/python基础语法/"><i class="fa fa-angle-left"></i> 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            
+        </div>
+    
+</article>
+
+        
+
+            </section>
+
+            
+                
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://q1.qlogo.cn/g?b=qq&amp;nk=2514425607&amp;s=4" alt="mikucat" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                0
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                6
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">数据分析基本流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">读取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">查看基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="toc-text">数据清洗</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%BB%E9%87%8D"><span class="toc-text">去重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text">处理缺失值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%92%8C%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6"><span class="toc-text">计算和保存文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E5%88%97%E6%95%B0%E6%8D%AE"><span class="toc-text">操作列数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E5%8F%96%E9%9C%80%E8%A6%81%E7%9A%84%E5%88%97"><span class="toc-text">选取需要的列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E5%88%97"><span class="toc-text">新增列</span></a></li></ol></li></ol>
+    </div>
+</aside>
+                
+                
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/c%E8%AF%AD%E8%A8%80/" style="font-size: 0.8em;">c语言</a> <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" style="font-size: 0.6em;">基础语法</a> <a href="/tags/%E5%BC%B1%E7%94%B5/" style="font-size: 0.6em;">弱电</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" style="font-size: 0.6em;">数据分析</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 0.8em;">网站</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2026/03/09/python/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5%E3%80%81%E6%B8%85%E6%B4%97%E5%8F%8A%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%E5%88%97%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/"><i class="fa fa-book"></i> 数据的导入、清洗及简单操作列（第一周）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2026/03/09/python/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"><i class="fa fa-book"></i> python基础语法</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/05/15/c%E8%AF%AD%E8%A8%80%E9%9A%8F%E6%9C%BA%E8%AF%BB%E5%8F%96/"><i class="fa fa-book"></i> c语言随机读取</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/05/13/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"><i class="fa fa-book"></i> c语言基础</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2025/04/27/%E5%BC%B1%E7%94%B5%E5%B0%8F%E7%9F%A5%E8%AF%86/"><i class="fa fa-book"></i> 弱电小知识</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+            
+
+        
+
+                </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                            <li>
+                                <a href="https://github.com/mikuwife" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2026 MikuCat's Blog 版权所有.</li>
+                            <li>本站已在风雨中飘摇<span id="kr-since">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">mikucat</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
+                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                            </div>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
+            </div>
+            <div id="gotop-box" class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享这一刻</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">让朋友们也来瞅瞅！</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+                    <button class="kr-share-platform-button" style="color: #62b6e7;" title="喵窝" onclick="krShareModalOpenPlatform('https://nya.one/share?text=%3E%20$TITLE%0A%3E%0A%3E%20$SUMMARY%0A----%20$SITE%0A%0A$URL')">
+                        <svg fill="currentColor" width="18" height="18" viewBox="0 0 329 388"><path d="M0,36.226c0,-19.993 16.233,-36.226 36.226,-36.226c13.788,0 25.787,7.719 31.908,19.068l188.366,229.845l0,-111.259c-6.356,5.508 -14.645,8.843 -23.707,8.843c-19.994,0 -36.226,-16.232 -36.226,-36.226c-0,-8.551 2.968,-16.413 7.93,-22.613l-0.015,-0.013l56.614,-69.08c6.2,-11.073 18.047,-18.565 31.63,-18.565c19.994,0 36.227,16.233 36.227,36.226l-0,314.644c-0,19.994 -16.233,36.226 -36.227,36.226c-13.166,0 -24.701,-7.039 -31.044,-17.555l-189.229,-230.899l-0,212.228c-0,19.994 -16.233,36.226 -36.227,36.226c-19.993,0 -36.226,-16.232 -36.226,-36.226l0,-314.644Z" /></svg>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+
+        <script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+
+
+
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
+
+
+<script defer src="/js/kr-core.min.js"></script>
+
+
+  <script defer src="/js/kr-pjax.min.js"></script>
+
+
+<!-- 额外的追加注入项 -->
+
+
+    </body>
+</html>
