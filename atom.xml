@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>mikucat</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>http://example.com/</id>
+  <link href="http://example.com/" rel="alternate"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, mikucat</rights>
+  <title>MikuCat's Blog</title>
+  <updated>2026-06-08T14:17:43.079Z</updated>
+  <entry>
+    <author>
+      <name>mikucat</name>
+    </author>
+    <category term="网站" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99/"/>
+    <category term="网站" scheme="http://example.com/tags/%E7%BD%91%E7%AB%99/"/>
+    <content>
+      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]>
+    </content>
+    <id>http://example.com/2026/06/06/hello-world/</id>
+    <link href="http://example.com/2026/06/06/hello-world/"/>
+    <published>2026-06-06T14:07:37.054Z</published>
+    <summary>
+      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for]]>
+    </summary>
+    <title>Hello World</title>
+    <updated>2026-06-08T14:17:43.079Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>mikucat</name>
+    </author>
+    <category term="办公软件" scheme="http://example.com/categories/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6/"/>
+    <category term="办公软件" scheme="http://example.com/tags/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6/"/>
+    <content>
+      <![CDATA[<ul><li>下载 <a href="https://www.foxitsoftware.cn/">福昕阅读器</a>。</li></ul><p><img src="/assets/img/pdf%E7%AD%BE%E5%90%8D.png" alt="pdf签名" title="pdf签名"><br><img src="/assets/img/pdf%E7%AD%BE%E5%90%8D2.png" alt="pdf签名2" title="pdf签名2"></p>]]>
+    </content>
+    <id>http://example.com/2026/06/01/pdf%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%89%8B%E5%86%99%E7%AD%BE%E5%90%8D/</id>
+    <link href="http://example.com/2026/06/01/pdf%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E6%89%8B%E5%86%99%E7%AD%BE%E5%90%8D/"/>
+    <published>2026-06-01T09:16:17.000Z</published>
+    <summary>
+      <![CDATA[<ul>
+<li>下载 <a href="https://www.foxitsoftware.cn/">福昕阅读器</a>。</li>
+</ul>
+<p><img src="/assets/img/pdf%E7%AD%BE%E5%90%8D.png" alt="pdf签名" ti]]>
+    </summary>
+    <title>pdf如何添加手写签名</title>
+    <updated>2026-06-08T14:17:43.097Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>mikucat</name>
+    </author>
+    <category term="弱电" scheme="http://example.com/categories/%E5%BC%B1%E7%94%B5/"/>
+    <category term="弱电" scheme="http://example.com/tags/%E5%BC%B1%E7%94%B5/"/>
+    <content>
+      <![CDATA[<h2 id="网线头排序"><a href="#网线头排序" class="headerlink" title="网线头排序"></a>网线头排序</h2><p>白橙、橙、白绿、蓝、白蓝、绿、白棕、棕</p><p><img src="/assets/img/%E7%BD%91%E7%BA%BF%E7%BA%BF%E5%BA%8F.png" alt="网线线序" title="网线线序"></p><h2 id="监控配件"><a href="#监控配件" class="headerlink" title="监控配件"></a>监控配件</h2><ul><li>基本的组成</li></ul><p><img src="/assets/img/%E7%9B%91%E6%8E%A7%E7%AE%80%E5%8D%95%E7%BB%84%E6%88%90.png" alt="监控简单组成" title="监控简单组成"></p><h2 id="简单理解ip冲突"><a href="#简单理解ip冲突" class="headerlink" title="简单理解ip冲突"></a>简单理解ip冲突</h2><p><img src="/assets/img/ip%E5%86%B2%E7%AA%81.png" alt="ip冲突" title="ip冲突"></p><p>ip是根据所连接网络的DCHP自动分配的，所以一般不会有冲突。那么造成ip冲突可能需要以下条件。</p><ol><li>某台主机是分配了一个静态的ip地址</li><li>这台主机是最后开机的（在没开机（联网）的时候DCHP是获取不到它的ip地址）</li></ol>]]>
+    </content>
+    <id>http://example.com/2025/04/27/%E5%BC%B1%E7%94%B5%E5%B0%8F%E7%9F%A5%E8%AF%86/</id>
+    <link href="http://example.com/2025/04/27/%E5%BC%B1%E7%94%B5%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    <published>2025-04-27T13:46:07.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="网线头排序"><a href="#网线头排序" class="headerlink" title="网线头排序"></a>网线头排序</h2><p>白橙、橙、白绿、蓝、白蓝、绿、白棕、棕</p>
+<p><img src="/assets/img/%E7%BD%91]]>
+    </summary>
+    <title>弱电小知识</title>
+    <updated>2026-06-08T14:17:43.108Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>mikucat</name>
+    </author>
+    <category term="网站" scheme="http://example.com/categories/%E7%BD%91%E7%AB%99/"/>
+    <category term="网站" scheme="http://example.com/tags/%E7%BD%91%E7%AB%99/"/>
+    <content>
+      <![CDATA[<h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成ssh密钥 并复制id_rsa.pub文件内容到github</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;&lt;你的邮箱&gt;&quot; </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置本地git账号</span></span><br><span class="line">git config --global user.email &quot;&lt;你的邮箱&gt;&quot;</span><br><span class="line">git config --global user.name &quot;&lt;你的用户名&gt;&quot;</span><br></pre></td></tr></table></figure><h2 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml文件中修改以下字段</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;填写github仓库地址&gt;</span></span><br></pre></td></tr></table></figure><p>部署时还需要下个插件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>]]>
+    </content>
+    <id>http://example.com/2025/04/25/%E6%90%AD%E5%BB%BAhexo%E7%BD%91%E7%AB%99/</id>
+    <link href="http://example.com/2025/04/25/%E6%90%AD%E5%BB%BAhexo%E7%BD%91%E7%AB%99/"/>
+    <published>2025-04-25T13:28:13.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><figure class="highlight shell"><table><tr><td class="gutter"]]>
+    </summary>
+    <title>搭建hexo网站</title>
+    <updated>2026-06-08T14:17:43.127Z</updated>
+  </entry>
+</feed>
